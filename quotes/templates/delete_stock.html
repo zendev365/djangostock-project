@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Delete Stock</h3>
+<br>
+
+<!-- DELETE STOCK EXAMPLE -->
+{% if add_stock %}
+  {% for item in add_stock %}
+    <a href="{% url 'delete' item.id %}" class="btn btn-dark">Delete {{item}}</a> &nbsp;&nbsp;&nbsp;
+  {% endfor %}
+{% else %}
+  There are no stocks in your list
+{% endif %}
+
+<br>
+<br>
+{% endblock %}
