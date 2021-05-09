@@ -27,9 +27,9 @@ def home(request):
 		return render(request, 'home.html', {'api':api})
 	else:
 		# use default ticker
-		api_request = requests.get('https://cloud.iexapis.com/stable/stock/vt/quote?token=' + api_token)
+		# api_request = requests.get('https://cloud.iexapis.com/stable/stock/vt/quote?token=' + api_token)
 		# api_request = requests.get('https://cloud.iexapis.com/stable/stock/aieq/quote?token=' + api_token)
-		# api_request = requests.get('https://cloud.iexapis.com/stable/stock/spy/quote?token=' + api_token)
+		api_request = requests.get('https://cloud.iexapis.com/stable/stock/spy/quote?token=' + api_token)
 
 		try:
 			api = json.loads(api_request.content)
